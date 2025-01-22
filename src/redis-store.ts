@@ -7,11 +7,10 @@ export const redis = createClient({
     url: "redis://127.0.0.1:6379"
 })
 
-
 export const redisVectoreStore = new RedisVectorStore(
     new OllamaEmbeddings({
-        model: "nomic-embed-text", // Trocando de llama2 para nomic-embed-text
-        baseUrl: "http://localhost:11434", // URL base do Ollama
+        model: "nomic-embed-text",
+        baseUrl: "http://localhost:11434",
     }),
     {
         indexName: "faq-embeddings",

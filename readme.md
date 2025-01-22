@@ -125,13 +125,10 @@ Este é um projeto de assistente virtual baseado em IA que responde perguntas so
 5. Execute os scripts do projeto:
    ```bash
    # Para indexar os dados do FAQ
-   npx tsx src/ingest.ts
-   
-   # Para realizar buscas
-   npx tsx src/search.ts
+   npx tsx src/index.ts
    
    # Para fazer perguntas, forneça a pergunta como argumento
-   npx tsx src/ask.ts "sua pergunta aqui"
+   npm run ask "Qual o numero de telefone?"
    ```
 
 Os serviços estarão disponíveis em:

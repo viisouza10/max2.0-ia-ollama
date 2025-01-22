@@ -7,8 +7,6 @@ async function search() {
         "tem garantia?",
         5
     )
-
-    console.log(response)
     await redis.disconnect()
 }
 search()

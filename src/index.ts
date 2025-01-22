@@ -33,11 +33,13 @@ async function load() {
     })
 
     await redis.connect()
+    await redis.flushAll();
+
     await RedisVectorStore.fromDocuments(
         spllitedDocuments,
         new OllamaEmbeddings({
-            model: "nomic-embed-text", // Trocando de llama2 para nomic-embed-text
-            baseUrl: "http://localhost:11434", // URL base do Ollama
+            model: "nomic-embed-text",
+            baseUrl: "http://localhost:11434",
         }),
         {
             indexName: "faq-embeddings",

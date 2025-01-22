@@ -5,8 +5,8 @@ import { redis, redisVectoreStore } from './redis-store';
 import { createStuffDocumentsChain } from "langchain/chains/combine_documents";
 
 const ollamaAiChat = new Ollama({
-    model: "gemma2", // Trocando de llama2 para nomic-embed-text
-    baseUrl: "http://localhost:11434", // URL base do Ollama
+    model: "gemma2",
+    baseUrl: "http://localhost:11434",
     temperature: 0.3,
 })
 
@@ -27,8 +27,6 @@ const prompt = new PromptTemplate({
 })
 
 async function getChain() {
-
-
     const combineDocsChain = await createStuffDocumentsChain({
         llm: ollamaAiChat,
         prompt,
@@ -41,9 +39,7 @@ async function getChain() {
 
 }
 
-
 async function main() {
-    // Pegar a pergunta dos argumentos da linha de comando
     const pergunta = process.argv[2];
 
     if (!pergunta) {
