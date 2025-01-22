@@ -7,7 +7,7 @@ import { createStuffDocumentsChain } from "langchain/chains/combine_documents";
 const ollamaAiChat = new Ollama({
     model: "gemma2",
     baseUrl: "http://localhost:11434",
-    temperature: 0.3,
+    temperature: 0.4,
 })
 
 const prompt = new PromptTemplate({
