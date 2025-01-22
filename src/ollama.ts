@@ -43,9 +43,17 @@ async function getChain() {
 
 
 async function main() {
+    // Pegar a pergunta dos argumentos da linha de comando
+    const pergunta = process.argv[2];
+
+    if (!pergunta) {
+        console.log('Por favor, forneça uma pergunta. Exemplo: npm run start "Qual o horário de funcionamento?"');
+        process.exit(1);
+    }
+
     const chain = await getChain()
     await redis.connect()
-    const response = await chain?.invoke({ input: "Qual o numero de telefone?" });
+    const response = await chain?.invoke({ input: pergunta });
 
     console.log(response)
 
